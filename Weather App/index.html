@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Apps</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+   integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+   crossorigin="anonymous">
+
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <div class="container my-5">
+    <h1 class="text-center">Weather App</h1>
+    <form>
+      <div class="form-group">
+        <input type="text" class="form-control" id="city" placeholder="Enter city">
+      </div>
+      <button type="submit" class="btn btn-primary" id="submitBtn">Submit</button>
+    </form>
+    <div id="weatherContainer">
+      <div class="d-flex justify-content-between align-items-center">
+        <h3 id="cityName"></h3>
+        <img src="" alt="" id="weatherIcon">
+        <h3 id="temperature"></h3>
+      </div>
+      <p id="description"></p>
+      <p id="humidity"></p>
+      <p id="windSpeed"></p>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
