@@ -6,28 +6,7 @@ body {
     display: none;
     background-color: teal;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 10px; 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   }
-  
 
-  /* Color Theme Swatches in Hex */
-.Northern-lights-in-the-Canadian-Rockies,-Jasper-1-hex { color: #172026; }
-.Northern-lights-in-the-Canadian-Rockies,-Jasper-2-hex { color: #5FCDD9; }
-.Northern-lights-in-the-Canadian-Rockies,-Jasper-3-hex { color: #027373; }
-.Northern-lights-in-the-Canadian-Rockies,-Jasper-4-hex { color: #04BFAD; }
-.Northern-lights-in-the-Canadian-Rockies,-Jasper-5-hex { color: #04BF9D; }
-
-/* Color Theme Swatches in RGBA */
-.Northern-lights-in-the-Canadian-Rockies,-Jasper-1-rgba { color: rgba(22, 32, 38, 1); }
-.Northern-lights-in-the-Canadian-Rockies,-Jasper-2-rgba { color: rgba(95, 204, 216, 1); }
-.Northern-lights-in-the-Canadian-Rockies,-Jasper-3-rgba { color: rgba(2, 114, 114, 1); }
-.Northern-lights-in-the-Canadian-Rockies,-Jasper-4-rgba { color: rgba(3, 191, 172, 1); }
-.Northern-lights-in-the-Canadian-Rockies,-Jasper-5-rgba { color: rgba(3, 191, 156, 1); }
-
-/* Color Theme Swatches in HSLA */
-.Northern-lights-in-the-Canadian-Rockies,-Jasper-1-hsla { color: hsla(202, 25, 12, 1); }
-.Northern-lights-in-the-Canadian-Rockies,-Jasper-2-hsla { color: hsla(185, 61, 61, 1); }
-.Northern-lights-in-the-Canadian-Rockies,-Jasper-3-hsla { color: hsla(180, 96, 22, 1); }
-.Northern-lights-in-the-Canadian-Rockies,-Jasper-4-hsla { color: hsla(174, 96, 38, 1); }
-.Northern-lights-in-the-Canadian-Rockies,-Jasper-5-hsla { color: hsla(168, 96, 38, 1); }

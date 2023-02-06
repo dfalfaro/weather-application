@@ -1,4 +1,4 @@
-const apiKey = "your_api_key";
+const apiKey = "6d9ae548620c2f3c7a8653d254edffc0";
 const weatherContainer = document.querySelector("#weatherContainer");
 const cityName = document.querySelector("#cityName");
 const temperature = document.querySelector("#temperature");
@@ -10,12 +10,13 @@ const weatherIcon = document.querySelector("#weatherIcon");
 document.querySelector("form").addEventListener("submit", function(event) {
   event.preventDefault();
   const city = document.querySelector("#city").value;
-  fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`)
+  const state = document.querySelector("#state").value;
+  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${state},US&appid=6d9ae548620c2f3c7a8653d254edffc0`)
     .then(response => response.json())
     .then(data => {
     weatherContainer.style.display = "block";
     cityName.innerHTML = data.name;
-    temperature.innerHTML = `${Math.round(data.main.temp - 273.15)}°C`;
+    temperature.innerHTML = `${Math.round((data.main.temp - 273.15) * 9/5 + 32)}°F`;
     description.innerHTML = data.weather[0].description;
     humidity.innerHTML = `Humidity: ${data.main.humidity}%`;
     windSpeed.innerHTML = `Wind Speed: ${data.wind.speed}m/s`;
