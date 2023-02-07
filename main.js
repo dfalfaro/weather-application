@@ -17,12 +17,14 @@ document.querySelector("form").addEventListener("submit", function(event) {
           forecastData[date] = {
             temperature: 0,
             description: "",
-            icon: ""
+            icon: "",
+            id: ""
           };
         }
         forecastData[date].temperature = forecast.main.temp;
         forecastData[date].description = forecast.weather[0].description;
         forecastData[date].icon = forecast.weather[0].icon;
+        forecastData[date].id = forecast.weather[0].id; 
       });
       // Calculate the average temperature for each day
       Object.keys(forecastData).forEach(date => {
@@ -42,6 +44,7 @@ document.querySelector("form").addEventListener("submit", function(event) {
             <p>Description: ${forecast.description}</p>
             <img src="http://openweathermap.org/img/wn/${forecast.icon}@2x.png"/>
           `;
+        changeBackground(forecast.id);
         } else {
           forecastElement.innerHTML = `
             <h2>${date}</h2>
@@ -57,3 +60,18 @@ document.querySelector("form").addEventListener("submit", function(event) {
       console.error(error);
     });
 });
+
+function changeBackground(input){
+  if(input<=531){
+    document.body.style.backgroundImage = 'url("https://drive.google.com/uc?export=view&id=1AbzHz-9dELRyCN-JDoUOLk7_KEm2yOtO")';
+  }
+  else if(input>=600 && input<=622){
+    document.body.style.backgroundImage = 'url("https://drive.google.com/uc?export=view&id=1Lhn_pha8S8Pch9SvzUuwxcpEQg3vLtHe")';
+  }
+  else if(input==800){
+    document.body.style.backgroundImage = 'url("https://drive.google.com/uc?export=view&id=1q8uPfXHrsKym6VHCfXUx0xjaH2Yg027u")';
+  }
+  else if(input>=801){
+    document.body.style.backgroundImage = 'url("https://drive.google.com/uc?export=view&id=16CRdZZ4eQ7nORc3TYE9wqOOIuEnLG1j_")';
+  }
+}

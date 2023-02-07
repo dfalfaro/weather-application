@@ -1,6 +1,8 @@
 body {
   font-family: Arial, sans-serif;
   text-align: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 
 h1 {
