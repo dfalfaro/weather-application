@@ -62,7 +62,10 @@ document.querySelector("form").addEventListener("submit", function(event) {
 });
 
 function changeBackground(input){
-  if(input<=531){
+  if(input<233){
+    document.body.style.backgroundImage = 'url("https://drive.google.com/uc?export=view&id=1Sbp_HSXlVhKkLiHeba6AfU-ykY8PpPGu")';
+  }
+  else if(input>=300 && input<=531){
     document.body.style.backgroundImage = 'url("https://drive.google.com/uc?export=view&id=1AbzHz-9dELRyCN-JDoUOLk7_KEm2yOtO")';
   }
   else if(input>=600 && input<=622){
@@ -71,7 +74,10 @@ function changeBackground(input){
   else if(input==800){
     document.body.style.backgroundImage = 'url("https://drive.google.com/uc?export=view&id=1q8uPfXHrsKym6VHCfXUx0xjaH2Yg027u")';
   }
-  else if(input>=801){
+  else if(input>=801 && input<=802){
     document.body.style.backgroundImage = 'url("https://drive.google.com/uc?export=view&id=16CRdZZ4eQ7nORc3TYE9wqOOIuEnLG1j_")';
+  }
+  else if(input>=803){
+    document.body.style.backgroundImage = 'url("https://drive.google.com/uc?export=view&id=1_xyf80V1W3GtAU9oM0pxTmDgICh3U_qK")';
   }
 }
