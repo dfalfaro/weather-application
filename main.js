@@ -41,7 +41,7 @@ document.querySelector("form").addEventListener("submit", function(event) {
           todayContainer.innerHTML = `
             <h2>Today</h2>
             <p>Temperature: ${forecast.temperature}°F</p>
-            <p>Description: ${forecast.description}</p>
+            <p>${forecast.description}</p>
             <img src="http://openweathermap.org/img/wn/${forecast.icon}@2x.png"/>
           `;
         changeBackground(forecast.id);
@@ -49,7 +49,7 @@ document.querySelector("form").addEventListener("submit", function(event) {
           forecastElement.innerHTML = `
             <h2>${date}</h2>
             <p>Temperature: ${forecast.temperature}°F</p>
-            <p>Description: ${forecast.description}</p>
+            <p>${forecast.description}</p>
             <img src="http://openweathermap.org/img/wn/${forecast.icon}@2x.png"/>
           `;
           forecastContainer.appendChild(forecastElement);
