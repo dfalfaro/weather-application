@@ -10,7 +10,11 @@
 </head>
 
 <body>
-  <h1>Weather App</h1>
+  <div class="container">
+  <div id="header">
+    <h1>Weather Forecast</h1>
+  </div>
+  <div id="form-container">
   <form>
     <input type="text" id="city" placeholder="City">
     <select class="form-select" id="state" aria-label="Default select example">
@@ -66,10 +70,14 @@
       <option value="WI">Wisconsin</option>
       <option value="WY">Wyoming</option>
     </select>
-    <button type="submit">Submit</button>
+    <div>
+      <button type="submit">Submit</button>
+    </div> 
   </form>
+</div>
   <div id="today"></div>
   <div id="forecast"></div>
+</div>
   <script src="./main.js"></script>
 </body>
 </html>
