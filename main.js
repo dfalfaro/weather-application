@@ -18,13 +18,11 @@ document.querySelector("form").addEventListener("submit", function(event) {
             temperature: 0,
             description: "",
             icon: "",
-            id: ""
           };
         }
         forecastData[date].temperature = forecast.main.temp;
         forecastData[date].description = forecast.weather[0].description;
         forecastData[date].icon = forecast.weather[0].icon;
-        forecastData[date].id = forecast.weather[0].id; 
       });
       // Calculate the average temperature for each day
       Object.keys(forecastData).forEach(date => {
@@ -36,29 +34,33 @@ document.querySelector("form").addEventListener("submit", function(event) {
       Object.keys(forecastData).forEach((date, index) => {
         const forecast = forecastData[date];
         const forecastElement = document.createElement("div");
-        if (index === 0) {
-          const todayContainer = document.querySelector("#today");
-          todayContainer.innerHTML = `
-            <h2>Today</h2>
-            <p>Temperature: ${forecast.temperature}°F</p>
-            <p>${forecast.description}</p>
-            <img src="http://openweathermap.org/img/wn/${forecast.icon}@2x.png"/>
-          `;
-        changeBackground(forecast.id);
-        } else {
-          forecastElement.innerHTML = `
-            <h2>${date}</h2>
-            <p>Temperature: ${forecast.temperature}°F</p>
-            <p>${forecast.description}</p>
-            <img src="http://openweathermap.org/img/wn/${forecast.icon}@2x.png"/>
-          `;
-          forecastContainer.appendChild(forecastElement);
+        forecastElement.innerHTML = `
+          <h2>${date}</h2>
+          <p>Temperature: ${forecast.temperature}°F</p>
+          <p>${forecast.description}</p>
+          <img src="http://openweathermap.org/img/wn/${forecast.icon}@2x.png"/>
+        `;
+        forecastContainer.appendChild(forecastElement);
         }
-      });
+      );
     })
     .catch(error => {
       console.error(error);
     });
+
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${state},US&appid=6d9ae548620c2f3c7a8653d254edffc0&units=imperial`)
+    .then(response => response.json())
+    .then(data => {
+      const todayContainer = document.querySelector("#today");
+      const backgroundSelector = data.weather[0].id
+      todayContainer.innerHTML = `
+          <h2>Today</h2>
+          <p>Temperature: ${data.main.temp}°F</p>
+          <p>${data.weather[0].description}</p>
+          <img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png"/>
+          `;
+      changeBackground(backgroundSelector)
+  });
 
     const options = {
       // Required: API key
@@ -81,8 +83,7 @@ document.querySelector("form").addEventListener("submit", function(event) {
           .setContent('Hello, find your location here')
           .openOn(map);
   });
-
-});
+})
 
 function changeBackground(input){
   if(input<233){
