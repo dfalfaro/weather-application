@@ -35,6 +35,7 @@ document.querySelector("form").addEventListener("submit", function(event) {
         forecastData[date].temperature = Math.floor((forecastData[date].temperature));
       });
       // Display the 5-day forecast using the forecastData object
+      document.getElementById("today").style.visibility = "visible";
       const forecastContainer = document.querySelector("#forecast");
       forecastContainer.innerHTML = "";
       Object.keys(forecastData).forEach((date, index) => {
@@ -60,7 +61,7 @@ document.querySelector("form").addEventListener("submit", function(event) {
       const todayContainer = document.querySelector("#today");
       const backgroundSelector = data.weather[0].id
       todayContainer.innerHTML = `
-          <h2>Today</h2>
+          <h2>Right Now</h2>
           <p>Temperature: ${data.main.temp}°F</p>
           <p>${data.weather[0].description}</p>
           <img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png"/>
@@ -88,6 +89,7 @@ document.querySelector("form").addEventListener("submit", function(event) {
           .setLatLng([39.5, -100.8])
           .setContent('Hello, find your location here')
           .openOn(map);
+          document.getElementById("windy").style.visibility = "visible";
   });
 })
 
