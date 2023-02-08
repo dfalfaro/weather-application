@@ -93,6 +93,7 @@ button[type="submit"] {
   text-align: center;
   margin-top: 50px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+  visibility: hidden;
 }
 
 #windy {
@@ -104,4 +105,5 @@ button[type="submit"] {
   text-align: center;
   margin-top: 50px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+  visibility: hidden;
 }
