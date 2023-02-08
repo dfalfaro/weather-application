@@ -7,14 +7,17 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="./styles.css">
+  <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+        <script src="https://api.windy.com/assets/map-forecast/libBoot.js"></script>
+        <style>
+            #windy {
+                width: 100%;
+                height: 300px;
+            }
+        </style>
 </head>
-
 <body>
-  <div class="container">
-  <div id="header">
-    <h1>Weather Forecast</h1>
-  </div>
-  <div id="form-container">
+  <h1>Weather App</h1>
   <form>
     <input type="text" id="city" placeholder="City">
     <select class="form-select" id="state" aria-label="Default select example">
@@ -70,14 +73,11 @@
       <option value="WI">Wisconsin</option>
       <option value="WY">Wyoming</option>
     </select>
-    <div>
-      <button type="submit">Submit</button>
-    </div> 
+    <button type="submit">Submit</button>
   </form>
-</div>
   <div id="today"></div>
   <div id="forecast"></div>
-</div>
+  <div id="windy"></div>
   <script src="./main.js"></script>
 </body>
 </html>

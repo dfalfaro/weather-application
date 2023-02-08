@@ -59,6 +59,29 @@ document.querySelector("form").addEventListener("submit", function(event) {
     .catch(error => {
       console.error(error);
     });
+
+    const options = {
+      // Required: API key
+      key: 'vyJngHjewR8tZeZESm2BkjwUQ8ODPukc',
+      // Put additional console output
+      verbose: true,
+      // Optional: Initial state of the map
+      lat: 39.5,
+      lon: -100.8,
+      zoom: 2,
+  };
+  // Initialize Windy API
+  windyInit(options, windyAPI => {
+      // windyAPI is ready, and contain 'map', 'store',
+      // 'picker' and other usefull stuff
+      const { map } = windyAPI;
+      // .map is instance of Leaflet map
+      L.popup()
+          .setLatLng([39.5, -100.8])
+          .setContent('Hello, find your location here')
+          .openOn(map);
+  });
+
 });
 
 function changeBackground(input){
