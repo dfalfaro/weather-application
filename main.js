@@ -3,6 +3,12 @@ document.querySelector("form").addEventListener("submit", function(event) {
   
   const city = document.querySelector("#city").value;
   const state = document.querySelector("#state").value;
+
+  if (!city || !state ) {
+    // Display an error message if the city or state inputs are empty
+    alert("Please enter a valid city and state.");
+    return;
+  }
   
   fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city},${state},US&appid=6d9ae548620c2f3c7a8653d254edffc0&units=imperial`)
     .then(response => response.json())
