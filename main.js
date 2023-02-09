@@ -32,7 +32,7 @@ document.querySelector("form").addEventListener("submit", function (event) {
         forecastData[date].description = forecast.weather[0].description;
         forecastData[date].icon = forecast.weather[0].icon;
       });
-      // Calculate the average temperature for each day
+      // Round temperature to a whole number
       Object.keys(forecastData).forEach((date) => {
         forecastData[date].temperature = Math.floor(
           forecastData[date].temperature
@@ -54,6 +54,7 @@ document.querySelector("form").addEventListener("submit", function (event) {
         forecastContainer.appendChild(forecastElement);
       });
     })
+
     .catch((error) => {
       console.error(error);
     });
@@ -67,9 +68,11 @@ document.querySelector("form").addEventListener("submit", function (event) {
       const backgroundSelector = data.weather[0].id;
       todayContainer.innerHTML = `
           <h2>Right Now</h2>
-          <p>Temperature: ${data.main.temp}°F</p>
+          <p>Temperature: ${Math.floor(data.main.temp)}°F</p>
     <p>${data.weather[0].description}</p>
-          <img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png"/>
+          <img src="http://openweathermap.org/img/wn/${
+            data.weather[0].icon
+          }@2x.png"/>
           `;
       changeBackground(backgroundSelector);
     });
