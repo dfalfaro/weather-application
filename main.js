@@ -117,6 +117,9 @@ function changeBackground(input) {
   } else if (input >= 600 && input <= 622) {
     document.body.style.backgroundImage =
       'url("https://drive.google.com/uc?export=view&id=1Lhn_pha8S8Pch9SvzUuwxcpEQg3vLtHe")';
+  } else if (input >= 701 && input <= 771) {
+    document.body.style.backgroundImage =
+      'url("https://drive.google.com/uc?export=view&id=1uckTawJ0mpFrUiT-PD6b6tuHfjGrLGOb")';
   } else if (input == 800) {
     document.body.style.backgroundImage =
       'url("https://drive.google.com/uc?export=view&id=1q8uPfXHrsKym6VHCfXUx0xjaH2Yg027u")';
